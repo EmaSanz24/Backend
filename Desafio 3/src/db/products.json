@@ -1,0 +1,26 @@
+[
+   {
+      "title": "Manzana",
+      "price": 1000,
+      "thumbnail": "https://imgprueba.com.ar",
+      "id": 1
+   },
+   {
+      "title": "Pera",
+      "price": 1500,
+      "thumbnail": "https://imgprueba.com.ar",
+      "id": 2
+   },
+   {
+      "title": "Banana",
+      "price": 2000,
+      "thumbnail": "https://imgprueba.com.ar",
+      "id": 3
+   },
+   {
+      "title": "Limon",
+      "price": 2200,
+      "thumbnail": "https://imgprueba.com.ar",
+      "id": 4
+   }
+]
