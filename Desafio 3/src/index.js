@@ -15,7 +15,7 @@ app.get("/products", (req, res) => {
 app.get("/randomProduct", (req, res) => {
   productContainer
     .getAll()
-    .then((parseList) => parseList[(Math.random() * parseList.length) | 0])
+    .then((parseList) => parseList[Math.floor(Math.random() * parseList.length)])
     .then((itemList) => res.send(itemList));
 });
 
