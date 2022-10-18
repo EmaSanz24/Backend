@@ -1,0 +1,16 @@
+div
+  h1.title Lista de productos
+  table.product-list
+    tr
+      th Título
+      th Precio
+      th Miniatura
+        if products.length
+            each val in products
+                tr
+                td=val.title
+                td=val.price
+                td
+                    img(height='72px' width='72px' src=val.thumbnail)
+a(href='/')
+    button Volver al formulario de carga

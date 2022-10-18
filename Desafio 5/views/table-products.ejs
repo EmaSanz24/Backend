@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div>
+    <h1 >Lista de productos</h1>
+
+    <table >
+        <tr>
+            <th>Título</th>
+            <th>Precio</th>
+            <th>Miniatura</th>
+        </tr>
+        <% if products.length {%>
+            <% products.forEach(val => { %>
+                <tr>
+                    <td>val.title</td>
+                    <td>val.price</td>
+                    <td><img height="72px" width="72px" src=val.thumbnail /></td>
+                </tr>
+            <% })}; %>
+            
+        
+    </table>
+
+    <a href="/"><button>Volver al formulario de carga</button></a>
+
+</div>
+</body>
+</html>

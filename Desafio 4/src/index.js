@@ -14,4 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/products", router);
 
 app.use("/api/form", express.static(__dirname + "public"));
-console.log(__dirname + "public");
+console.log(__dirname + "public/index.html");
+app.get("/api/form", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
