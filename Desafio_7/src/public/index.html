@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <title>Desafio 6</title>
+</head>
+
+<body>
+
+    <form id="product-form">
+        <input type="text" name="title" placeholder="nombre">
+        <input type="text" name="price" placeholder="precio">
+        <input type="text" name="thumbnail" placeholder="imagen">
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="products"></div>
+    <form id="chat">
+        <input type="text" name="message">
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="chatContainer"></div>
+    <script  src="/assets/js/client.js"></script>
+</body>
+
+</html>

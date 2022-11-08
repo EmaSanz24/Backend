@@ -1,0 +1,11 @@
+<h2 id="chat_title">Chat</h2>
+<div id="chat_dashboard">
+    {{#if messages.length}}
+    {{#each message}}
+    <div class="chat">
+        <pclass="chat-message-text">{{this.message}}</p>
+        <p class="chat-message-date">{{this.createdAt}}</p>
+    </div>
+    {{/each}}
+    {{/if}}
+</div>
