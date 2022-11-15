@@ -1,0 +1,331 @@
+                use ecommerce
+                db.createCollection('messages')
+                db.createCollection('products')
+
+                1 y 2)
+                db.products.insert([
+    { "title" : "Procesador Intel I9", "description" : 'Procesador tope de gama', 'code': "IT9PKTJ", "thumbnail": 'URL Intel I9', 'price': 4000, 'stock': 5 },
+    { "title" : "Procesador Intel I7", "description" : 'Procesador de gama alta', 'code': "IT7PKTJ", "thumbnail": 'URL Intel I7', 'price': 3500, 'stock': 9 },
+    { "title" : "Procesador Intel I5", "description" : 'Procesador de gama media', 'code': "IT5PKTJ", "thumbnail": 'URL Intel I5', 'price': 3000, 'stock': 15 },
+    { "title" : "Procesador Intel I3", "description" : 'Procesador de gama baja', 'code': "IT3PKTJ", "thumbnail": 'URL Intel I3', 'price': 1500, 'stock': 20 },
+    { "title" : "Procesador Ryzen 9", "description" : 'Procesador tope de gama', 'code': "RZ9PKTJ", "thumbnail": 'URL Ryzen 9', 'price': 3800, 'stock': 6 },
+    { "title" : "Procesador Ryzen 7", "description" : 'Procesador de gama alta', 'code': "RZ7PKTJ", "thumbnail": 'URL Ryzen 7', 'price': 3600, 'stock': 8 },
+    { "title" : "Procesador Ryzen 5", "description" : 'Procesador de gama media', 'code': "RZ5PKTJ", "thumbnail": 'URL Ryzen 5', 'price': 2700, 'stock': 12 },
+    { "title" : "Procesador Ryzen 3", "description" : 'Procesador de gama baja', 'code': "RZ3PKTJ", "thumbnail": 'URL Rzyen 3', 'price': 1200, 'stock': 25 },
+    { "title" : "Procesador Intel Pentium", "description" : 'Procesador generico', 'code': "ITPPKTJ", "thumbnail": 'URL Intel Pentium', 'price': 800, 'stock': 80 },
+    { "title" : "Procesador Ryzen Threadripper", "description" : 'Procesador especializado', 'code': "RZTPKTJ", "thumbnail": 'URL Ryzen Threadripper', 'price': 4990, 'stock': 2 },  
+])
+----------------------------------------------
+rta:
+{ acknowledged: true,
+  insertedIds: 
+   { '0': ObjectId("637410d6091ffd9c2e32fb84"),
+     '1': ObjectId("637410d6091ffd9c2e32fb85"),
+     '2': ObjectId("637410d6091ffd9c2e32fb86"),
+     '3': ObjectId("637410d6091ffd9c2e32fb87"),
+     '4': ObjectId("637410d6091ffd9c2e32fb88"),
+     '5': ObjectId("637410d6091ffd9c2e32fb89"),
+     '6': ObjectId("637410d6091ffd9c2e32fb8a"),
+     '7': ObjectId("637410d6091ffd9c2e32fb8b"),
+     '8': ObjectId("637410d6091ffd9c2e32fb8c"),
+     '9': ObjectId("637410d6091ffd9c2e32fb8d") } }
+----------------------------------------------
+                db.messages.insert([
+    {"mail":"agustin@gmail.com","text":"hola","hour":"22/04/22 00:22:37"},
+    {"mail":"juan@gmail.com","text":"hola chicos, como va?","hour":"22/04/22 00:04:20"},
+    {"mail":"jazmin@gmail.com","text":"perdon la demora ya llegue","hour":"22/04/22 01:04:76"},
+    {"mail":"juan@gmail.com","text":"no pasa nada jaz","hour":"22/04/22 02:04:55"},
+    {"mail":"jazmin@gmail.com","text":"me perdi de algo?","hour":"22/04/22 02:04:07"},
+    {"mail":"agustin@gmail.com","text":"no mucho la verdad","hour":"22/04/22 02:04:55"},
+    {"mail":"juan@gmail.com","text":"apenas arrancamos","hour":"22/04/22 02:04:27"},
+    {"mail":"edu@gmail.com","text":"recien veo los mensajes jaja","hour":"24/04/22 22:04:25"},
+    {"mail":"juan@gmail.com","text":"suele pasar edu, a veces no andan las notificaciones","hour":"29/10/22 16:10:26"},
+    {"mail":"agustin@gmail.com","text":"bueno me voy","hour":"29/10/22 16:10:38"}
+])
+----------------------------------------------
+rta:
+{ acknowledged: true,
+  insertedIds: 
+   { '0': ObjectId("637410a3091ffd9c2e32fb7a"),
+     '1': ObjectId("637410a3091ffd9c2e32fb7b"),
+     '2': ObjectId("637410a3091ffd9c2e32fb7c"),
+     '3': ObjectId("637410a3091ffd9c2e32fb7d"),
+     '4': ObjectId("637410a3091ffd9c2e32fb7e"),
+     '5': ObjectId("637410a3091ffd9c2e32fb7f"),
+     '6': ObjectId("637410a3091ffd9c2e32fb80"),
+     '7': ObjectId("637410a3091ffd9c2e32fb81"),
+     '8': ObjectId("637410a3091ffd9c2e32fb82"),
+     '9': ObjectId("637410a3091ffd9c2e32fb83") } }
+----------------------------------------------
+                3)
+                db.products.find()
+----------------------------------------------
+rta:
+{ _id: ObjectId("637410d6091ffd9c2e32fb84"),
+  title: 'Procesador Intel I9',
+  description: 'Procesador tope de gama',
+  code: 'IT9PKTJ',
+  thumbnail: 'URL Intel I9',
+  price: 4000,
+  stock: 5 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb85"),
+  title: 'Procesador Intel I7',
+  description: 'Procesador de gama alta',
+  code: 'IT7PKTJ',
+  thumbnail: 'URL Intel I7',
+  price: 3500,
+  stock: 9 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb86"),
+  title: 'Procesador Intel I5',
+  description: 'Procesador de gama media',
+  code: 'IT5PKTJ',
+  thumbnail: 'URL Intel I5',
+  price: 3000,
+  stock: 15 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb87"),
+  title: 'Procesador Intel I3',
+  description: 'Procesador de gama baja',
+  code: 'IT3PKTJ',
+  thumbnail: 'URL Intel I3',
+  price: 1500,
+  stock: 20 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb88"),
+  title: 'Procesador Ryzen 9',
+  description: 'Procesador tope de gama',
+  code: 'RZ9PKTJ',
+  thumbnail: 'URL Ryzen 9',
+  price: 3800,
+  stock: 6 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb89"),
+  title: 'Procesador Ryzen 7',
+  description: 'Procesador de gama alta',
+  code: 'RZ7PKTJ',
+  thumbnail: 'URL Ryzen 7',
+  price: 3600,
+  stock: 8 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb8a"),
+  title: 'Procesador Ryzen 5',
+  description: 'Procesador de gama media',
+  code: 'RZ5PKTJ',
+  thumbnail: 'URL Ryzen 5',
+  price: 2700,
+  stock: 12 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb8b"),
+  title: 'Procesador Ryzen 3',
+  description: 'Procesador de gama baja',
+  code: 'RZ3PKTJ',
+  thumbnail: 'URL Rzyen 3',
+  price: 1200,
+  stock: 25 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb8c"),
+  title: 'Procesador Intel Pentium',
+  description: 'Procesador generico',
+  code: 'ITPPKTJ',
+  thumbnail: 'URL Intel Pentium',
+  price: 800,
+  stock: 80 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb8d"),
+  title: 'Procesador Ryzen Threadripper',
+  description: 'Procesador especializado',
+  code: 'RZTPKTJ',
+  thumbnail: 'URL Ryzen Threadripper',
+  price: 4990,
+  stock: 2 }
+----------------------------------------------
+                db.messages.find()
+----------------------------------------------
+rta:
+{ _id: ObjectId("637410a3091ffd9c2e32fb7a"),
+  mail: 'agustin@gmail.com',
+  text: 'hola',
+  hour: '22/04/22 00:22:37' }
+{ _id: ObjectId("637410a3091ffd9c2e32fb7b"),
+  mail: 'juan@gmail.com',
+  text: 'hola chicos, como va?',
+  hour: '22/04/22 00:04:20' }
+{ _id: ObjectId("637410a3091ffd9c2e32fb7c"),
+  mail: 'jazmin@gmail.com',
+  text: 'perdon la demora ya llegue',
+  hour: '22/04/22 01:04:76' }
+{ _id: ObjectId("637410a3091ffd9c2e32fb7d"),
+  mail: 'juan@gmail.com',
+  text: 'no pasa nada jaz',
+  hour: '22/04/22 02:04:55' }
+{ _id: ObjectId("637410a3091ffd9c2e32fb7e"),
+  mail: 'jazmin@gmail.com',
+  text: 'me perdi de algo?',
+  hour: '22/04/22 02:04:07' }
+{ _id: ObjectId("637410a3091ffd9c2e32fb7f"),
+  mail: 'agustin@gmail.com',
+  text: 'no mucho la verdad',
+  hour: '22/04/22 02:04:55' }
+{ _id: ObjectId("637410a3091ffd9c2e32fb80"),
+  mail: 'juan@gmail.com',
+  text: 'apenas arrancamos',
+  hour: '22/04/22 02:04:27' }
+{ _id: ObjectId("637410a3091ffd9c2e32fb81"),
+  mail: 'edu@gmail.com',
+  text: 'recien veo los mensajes jaja',
+  hour: '24/04/22 22:04:25' }
+{ _id: ObjectId("637410a3091ffd9c2e32fb82"),
+  mail: 'juan@gmail.com',
+  text: 'suele pasar edu, a veces no andan las notificaciones',
+  hour: '29/10/22 16:10:26' }
+{ _id: ObjectId("637410a3091ffd9c2e32fb83"),
+  mail: 'agustin@gmail.com',
+  text: 'bueno me voy',
+  hour: '29/10/22 16:10:38' }
+----------------------------------------------
+
+4)
+db.products.countDocuments()
+db.messages.countDocuments()
+
+----------------------------------------------
+rta: 10
+----------------------------------------------
+
+5)a)
+db.products.insertOne(
+    { "title" : "Procesador Generico", "description" : 'Procesador generico', 'code': "GEN76KT", "thumbnail": 'URL Procesador Generico', 'price': 150, 'stock': 12 }
+)
+----------------------------------------------
+rta:
+{ acknowledged: true,
+  insertedId: ObjectId("63741877091ffd9c2e32fb8e") }
+----------------------------------------------
+b)
+
+i) db.products.find({price: {$lt: 1000}})
+----------------------------------------------
+rta:
+{ _id: ObjectId("637410d6091ffd9c2e32fb8c"),
+  title: 'Procesador Intel Pentium',
+  description: 'Procesador generico',
+  code: 'ITPPKTJ',
+  thumbnail: 'URL Intel Pentium',
+  price: 800,
+  stock: 80 }
+{ _id: ObjectId("63741877091ffd9c2e32fb8e"),
+  title: 'Procesador Generico',
+  description: 'Procesador generico',
+  code: 'GEN76KT',
+  thumbnail: 'URL Procesador Generico',
+  price: 150,
+  stock: 12 }
+----------------------------------------------
+ii) db.products.find( { $and: [{ price : { $gte : 1000} } , { price : { $lte : 3000} } ]})
+----------------------------------------------
+rta:
+{ _id: ObjectId("637410d6091ffd9c2e32fb86"),
+  title: 'Procesador Intel I5',
+  description: 'Procesador de gama media',
+  code: 'IT5PKTJ',
+  thumbnail: 'URL Intel I5',
+  price: 3000,
+  stock: 15 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb87"),
+  title: 'Procesador Intel I3',
+  description: 'Procesador de gama baja',
+  code: 'IT3PKTJ',
+  thumbnail: 'URL Intel I3',
+  price: 1500,
+  stock: 20 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb8a"),
+  title: 'Procesador Ryzen 5',
+  description: 'Procesador de gama media',
+  code: 'RZ5PKTJ',
+  thumbnail: 'URL Ryzen 5',
+  price: 2700,
+  stock: 12 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb8b"),
+  title: 'Procesador Ryzen 3',
+  description: 'Procesador de gama baja',
+  code: 'RZ3PKTJ',
+  thumbnail: 'URL Rzyen 3',
+  price: 1200,
+  stock: 25 }
+----------------------------------------------
+iii) db.products.find({price: {$gt: 3000}})
+----------------------------------------------
+rta:
+{ _id: ObjectId("637410d6091ffd9c2e32fb84"),
+  title: 'Procesador Intel I9',
+  description: 'Procesador tope de gama',
+  code: 'IT9PKTJ',
+  thumbnail: 'URL Intel I9',
+  price: 4000,
+  stock: 5 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb85"),
+  title: 'Procesador Intel I7',
+  description: 'Procesador de gama alta',
+  code: 'IT7PKTJ',
+  thumbnail: 'URL Intel I7',
+  price: 3500,
+  stock: 9 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb88"),
+  title: 'Procesador Ryzen 9',
+  description: 'Procesador tope de gama',
+  code: 'RZ9PKTJ',
+  thumbnail: 'URL Ryzen 9',
+  price: 3800,
+  stock: 6 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb89"),
+  title: 'Procesador Ryzen 7',
+  description: 'Procesador de gama alta',
+  code: 'RZ7PKTJ',
+  thumbnail: 'URL Ryzen 7',
+  price: 3600,
+  stock: 8 }
+{ _id: ObjectId("637410d6091ffd9c2e32fb8d"),
+  title: 'Procesador Ryzen Threadripper',
+  description: 'Procesador especializado',
+  code: 'RZTPKTJ',
+  thumbnail: 'URL Ryzen Threadripper',
+  price: 4990,
+  stock: 2 }
+
+----------------------------------------------
+iv) db.products.find({},{title:1}).sort({price:1}).limit(1).skip(2)
+----------------------------------------------
+rta:
+{ _id: ObjectId("637410d6091ffd9c2e32fb8b"),
+  title: 'Procesador Ryzen 3' }
+----------------------------------------------
+c) db.products.updateMany({'stock':{$gte: 0}},{$set:{'stock':100}})
+----------------------------------------------
+rta:
+{ acknowledged: true,
+  insertedId: null,
+  matchedCount: 11,
+  modifiedCount: 11,
+  upsertedCount: 0 }
+----------------------------------------------
+d) db.products.updateMany({'price': {$gte: 4000}},{$set:{'stock': 0}})
+----------------------------------------------
+rta:
+{ acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0 }
+----------------------------------------------
+e) db.products.deleteMany({'price':{$lt: 1000}})
+
+----------------------------------------------
+rta:
+{ acknowledged: true, deletedCount: 2 }
+----------------------------------------------
+6)
+db.createUser(
+    {user:'pepe',
+    pwd: 'asd456',
+    roles: [
+        {role: 'read', db: 'ecommerce'}
+    ]}
+)
+-u pepe -p asd456
+----------------------------------------------
+rta:
+----------------------------------------------
+
