@@ -1,0 +1,113 @@
+D:\Programacion\BackEnd\Desafios\Desafio_10\node_modules\mongodb\lib\sdam\topology.js:293  
+                const timeoutError = new error_1.MongoServerSelectionError(`Server selection timed out after ${serverSelectionTimeoutMS} ms`, this.description);
+                                     ^
+
+MongoServerSelectionError: connection <monitor> to 54.185.135.208:27017 closed
+    at Timeout._onTimeout (D:\Programacion\BackEnd\Desafios\Desafio_10\node_modules\mongodb\lib\sdam\topology.js:293:38)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7) {
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-poqdadk-shard-00-00.3ibatso.mongodb.net:27017' => ServerDescription {
+        address: 'ac-poqdadk-shard-00-00.3ibatso.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 96693877,
+        lastWriteDate: 0,
+        error: MongoNetworkError: connection <monitor> to 54.185.135.208:27017 closed      
+            at Connection.onClose (D:\Programacion\BackEnd\Desafios\Desafio_10\node_modules\mongodb\lib\cmap\connection.js:135:19)
+            at TLSSocket.<anonymous> (D:\Programacion\BackEnd\Desafios\Desafio_10\node_modules\mongodb\lib\cmap\connection.js:62:46)
+            at TLSSocket.emit (node:events:527:28)
+            at node:net:709:12
+            at TCP.done (node:_tls_wrap:582:7) {
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      },
+      'ac-poqdadk-shard-00-01.3ibatso.mongodb.net:27017' => ServerDescription {
+        address: 'ac-poqdadk-shard-00-01.3ibatso.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 96693616,
+        lastWriteDate: 0,
+        error: MongoNetworkError: connection <monitor> to 52.37.70.137:27017 closed        
+            at Connection.onClose (D:\Programacion\BackEnd\Desafios\Desafio_10\node_modules\mongodb\lib\cmap\connection.js:135:19)
+            at TLSSocket.<anonymous> (D:\Programacion\BackEnd\Desafios\Desafio_10\node_modules\mongodb\lib\cmap\connection.js:62:46)
+            at TLSSocket.emit (node:events:527:28)
+            at node:net:709:12
+            at TCP.done (node:_tls_wrap:582:7) {
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      },
+      'ac-poqdadk-shard-00-02.3ibatso.mongodb.net:27017' => ServerDescription {
+        address: 'ac-poqdadk-shard-00-02.3ibatso.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 96694036,
+        lastWriteDate: 0,
+        error: MongoNetworkError: connection <monitor> to 54.218.148.211:27017 closed      
+            at Connection.onClose (D:\Programacion\BackEnd\Desafios\Desafio_10\node_modules\mongodb\lib\cmap\connection.js:135:19)
+            at TLSSocket.<anonymous> (D:\Programacion\BackEnd\Desafios\Desafio_10\node_modules\mongodb\lib\cmap\connection.js:62:46)
+            at TLSSocket.emit (node:events:527:28)
+            at node:net:709:12
+            at TCP.done (node:_tls_wrap:582:7) {
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-t8tvei-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  [Symbol(errorLabels)]: Set(0) {}
+}
+[nodemon] app crashed - waiting for file changes before starting...
