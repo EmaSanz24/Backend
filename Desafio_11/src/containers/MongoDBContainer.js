@@ -29,6 +29,12 @@ class MongoDBContainer {
     const response = await this.model.findByIdAndUpdate(id, newData, { new: true });
     return response;
   }
+
+  async getOne(options) {
+    const response = await this.model.findOne(options).lean().exec();
+
+    return response;
+  }
 }
 
 export { MongoDBContainer };

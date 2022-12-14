@@ -5,9 +5,11 @@ import { URL } from "url";
 
 import { router } from "./routers/session.js";
 import { Sessions } from "./services/index.js";
+import { PassportAuth } from "./middlewares/passportAuth.js";
 
 const app = express();
 
+PassportAuth.init();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.static("./public"));

@@ -3,6 +3,7 @@ import { MongoDBService, FirebaseDBService } from "../services/index.js";
 import { CartsMongo, CartsFilesystem, CartsMemory, CartsFirebase } from "./Carts/index.js";
 import { ProductsMongo, ProductsFilesystem, ProductsMemory, ProductsFirebase } from "./Products/index.js";
 import { MessagesMongo } from "./Messages/index.js";
+import { UsersMongo } from "./Users/index.js";
 
 const getSelectedDaos = () => {
   switch (config.SERVER.SELECTED_DATABASE) {
@@ -12,6 +13,7 @@ const getSelectedDaos = () => {
         ProductDao: new ProductsMongo(),
         CartDao: new CartsMongo(),
         MessageDao: new MessagesMongo(),
+        UserDao: new UsersMongo(),
       };
     }
     case "filesystem": {
@@ -36,5 +38,5 @@ const getSelectedDaos = () => {
   }
 };
 
-const { ProductDao, CartDao, MessageDao } = getSelectedDaos();
-export { ProductDao, CartDao, MessageDao };
+const { ProductDao, CartDao, MessageDao, UserDao } = getSelectedDaos();
+export { ProductDao, CartDao, MessageDao, UserDao };
