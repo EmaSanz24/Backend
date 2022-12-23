@@ -1,34 +1,21 @@
 import { Router } from "express";
+import { fork } from "child_process";
 
 const router = Router();
+const child = fork("./src/routers/process/factory/child.js");
 router.get("/", async (req, res) => {
   const quantity = req.query.cant;
-  let countObj = {};
-  let numbers = [];
 
   if (!quantity) {
     //10e7 = 100.000.000
-    for (let i = 0; i < 10e7; i++) {
-      const numb = Math.floor(Math.random() * 1000) + 1;
-      numbers.push(numb);
-    }
+    child.send("default");
   } else {
+    child.send(Number(quantity));
   }
-
-  // let countObj = {};
-  // let arr = [1,2,3,1,2,3,4];
-
-  // let countFunc = keys => {
-  //   countObj[keys] = ++countObj[keys] || 1;
-  // }
-
-  // arr.forEach(countFunc);
-
-  // console.log(countObj)
-
-  const numb = Math.floor(Math.random() * 1000) + 1;
-
-  res.send(`
-    `);
+  child.on("message", (msg) => {
+    console.log(msg);
+    res.send(msg);
+  });
 });
+
 export { router as RandomsRouter };
