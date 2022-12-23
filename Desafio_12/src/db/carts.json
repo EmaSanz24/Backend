@@ -1,0 +1,33 @@
+[
+   {
+      "timestamp": "11/1/2022 6:37:07 PM",
+      "products": [
+         {
+            "timestamp": "11/1/2022 4:44:32 PM",
+            "title": "Procesador Ryzen 7",
+            "description": "Procesador de alta gama",
+            "code": "R7KZPTG",
+            "thumbnail": "urlRyzen7",
+            "price": 230,
+            "stock": 35,
+            "id": 2
+         },
+         {
+            "timestamp": "11/1/2022 4:44:32 PM",
+            "title": "Procesador Ryzen 7",
+            "description": "Procesador de alta gama",
+            "code": "R7KZPTG",
+            "thumbnail": "urlRyzen7",
+            "price": 230,
+            "stock": 35,
+            "id": 2
+         }
+      ],
+      "id": 1
+   },
+   {
+      "timestamp": "11/1/2022 6:48:23 PM",
+      "products": [],
+      "id": 2
+   }
+]
