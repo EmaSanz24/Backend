@@ -9,7 +9,7 @@ import { cpus } from "os";
 import cluster from "cluster";
 
 const app = express();
-const PORT = process.argv[2] || 8080;
+const PORT = parseInt(process.argv[2]) || 8080;
 
 PassportAuth.init();
 app.use(express.json());
@@ -38,3 +38,11 @@ if (cluster.isPrimary) {
 } else {
   const server = app.listen(PORT, () => console.log(`Server running on port ${server.address().port}`));
 }
+/* comandos en la terminal
+pm2 start index.js --name="Server Fork 1" --watch - 8080
+pm2 start index.js --name="Server Cluster" --watch  -i max - 8081
+pm2 start index.js --name="Server Fork 2" --watch - 8082
+pm2 start index.js --name="Server Fork 3" --watch - 8083
+pm2 start index.js --name="Server Fork 4" --watch - 8084
+pm2 start index.js --name="Server Fork 5" --watch - 8085
+*/
