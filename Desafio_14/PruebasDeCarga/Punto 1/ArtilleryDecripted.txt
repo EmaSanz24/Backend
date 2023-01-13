@@ -1,0 +1,2 @@
+desconozco el motivo pero no me hace el desencriptado del archivo.log de profiler
+el comando que ingreso es: $ node --prof-process Artillery-v8.log > ArtilleryDecripted.txt
