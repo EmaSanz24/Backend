@@ -1,6 +1,6 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import { UserDao } from "../Dao/index.js";
+import { UserDao } from "../dao/index.js";
 import bcrypt from "bcrypt";
 
 const init = () => {
