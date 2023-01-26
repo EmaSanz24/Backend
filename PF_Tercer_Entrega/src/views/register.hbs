@@ -1,0 +1,49 @@
+<div >
+  <div >
+    <h1>Registro de Usuario</h1>
+    <br>
+    <form class="form" action="/register" method="post" role="form" autocomplete="off">
+
+      <div >
+        <input id="nombre" name='name' placeholder="John"  type="text" required>
+      </div>
+      <div >
+        <input id="apellido" name='lastname' placeholder="Connor"  type="text" required>
+      </div>
+
+      <div >
+        <input id="e-mail" name='email' placeholder="example@example.com"  type="text" required>
+      </div>
+
+      <div >
+        <input id="contraseña"  name='password' placeholder="password"  type="password" required>
+      </div>
+
+      <div >
+        <input id="direccion"  name='address' placeholder="Avenida Siempre Viva 174"  type="text" required>
+      </div>
+
+      <div >
+        <input id="edad"  name='age' placeholder="18"  type="text" required>
+      </div>
+
+      <div >
+        <input id="telefono"  name='phone' placeholder="+54 11 5457 2862"  type="text" required>
+      </div>
+
+      <div >
+        <input id="foto"  name='picture' placeholder="url imagen"  type="text" required>
+      </div>
+
+      <div >
+        <input type="submit" value="register">
+      </div>
+    </form>
+    
+    <hr>
+    
+    <div >
+      <button  onclick="location.href = '/login'">Ir a Login</button>
+    </div>
+  </div>
+</div>

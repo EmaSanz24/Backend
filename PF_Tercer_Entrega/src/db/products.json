@@ -1,0 +1,32 @@
+[
+   {
+      "timestamp": "11/1/2022 4:43:43 PM",
+      "title": "Procesador Intel I7",
+      "description": "Procesador de alta gama",
+      "code": "IT7PKTJ",
+      "thumbnail": "https://www.qloud.ar/SITES/ryr/fotos/19200-0.jpg",
+      "price": 250,
+      "stock": 15,
+      "id": 1
+   },
+   {
+      "timestamp": "11/1/2022 4:44:32 PM",
+      "title": "Procesador Ryzen 7",
+      "description": "Procesador de alta gama",
+      "code": "R7KZPTG",
+      "thumbnail": "urlRyzen7",
+      "price": 230,
+      "stock": 35,
+      "id": 2
+   },
+   {
+      "timestamp": "11/1/2022 5:21:15 PM",
+      "title": "Procesador Ryzen 5",
+      "description": "Procesador de gama media",
+      "code": "R5KZPTG",
+      "thumbnail": "urlRyzen5",
+      "price": 170,
+      "stock": 20,
+      "id": 3
+   }
+]
