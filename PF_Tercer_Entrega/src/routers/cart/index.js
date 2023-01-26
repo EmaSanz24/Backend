@@ -1,8 +1,12 @@
 import { Router } from "express";
 import { DATE_UTILS, ERRORS_UTILS, SUCCESS_UTILS } from "../../utils/index.js";
-import { CartDao, ProductDao } from "../../dao/index.js";
+import { CartDao, ProductDao, UserDao } from "../../dao/index.js";
+import twilio from "twilio";
+import { config } from "../../config/twilio.js";
 
 const router = Router();
+
+const client = twilio(config.user, config.pass);
 
 router.post("/", async (req, res) => {
   const baseCart = { timestamp: DATE_UTILS.getTimestamp(), products: [] };
@@ -66,6 +70,25 @@ router.post("/:cartId/products", async (req, res) => {
     }
   }
 });
+
+router.post("/:cartId/products/buy"),
+  async (req, res) => {
+    const { cartId } = req.params;
+    const cart = await CartDao.getById(cartId);
+    const products = cart.products;
+    if (products.length === 0) throw new Error("noProducts");
+    const user = await UserDao.getAll();
+    user.forEach((user) => {
+      if (user.cartId === cartId) {
+        return (phone = user.phone);
+      }
+    });
+    const msg = await client.messages.create({
+      body: "su pedido esta en proceso, a continuacion estan sus productos comprados: " + products,
+      from: config.number,
+      to: "whatsapp:" + phone,
+    });
+  };
 //DELETE: '/:id/productos/:id_prod' - Eliminar un producto del carrito por su id de carrito y de producto
 
 router.delete("/:cartId/products/:prodId", async (req, res) => {
