@@ -1,0 +1,10 @@
+{
+    "ignore":[
+        "/*.json"
+    ],
+    "ext": ".js",
+    "watch":["src", "server.js"],
+    "events":{
+        "start":"clear"
+    }
+}
