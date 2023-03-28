@@ -5,6 +5,7 @@ import { MessageRepository } from "./messages.repository.js";
 import { app } from "../../server.js";
 import { Server as httpServer } from "http";
 import { Server as socketIOServer } from "socket.io";
+import { JOI_VALIDATOR } from "../../utils/joi.utils.js";
 
 export class MessageController {
   constructor(res) {
@@ -12,6 +13,7 @@ export class MessageController {
   }
   async getMessages() {
     const actual = await new MessageRepository().getAll();
+    logger.debug(actual);
     if (!actual || actual.length < 1) {
       logger.info("no se encontraron mensajes almacenados");
       this.res.send({ succes: false, message: "no messages" });
@@ -24,8 +26,8 @@ export class MessageController {
     this.res.send(normalized);
   }
   async newMessage(data) {
-    const { email, name, lastname, id, text } = data;
-    const msg = {
+    const { email, name, lastname, text, id } = data;
+    const msg = await JOI_VALIDATOR.message.validateAsync({
       message: {
         author: {
           id: id,
@@ -36,8 +38,10 @@ export class MessageController {
         text: text,
         timestamp: DATE_UTILS.getTimestamp(),
       },
-    };
+    });
     const normalize = normalizr.normalize;
+    const authorSchema = new normalizr.schema.Entity("authors");
+    const messageSchema = new normalizr.schema.Entity("message", { author: authorSchema });
     await new MessageRepository().save(msg);
     const actual = await new MessageRepository().getAll();
     const normalized = normalize(actual, messageSchema);

@@ -8,7 +8,7 @@ const MessageSchema = new Schema(
       author: {
         id: { type: String, required: true, max: 100 },
         name: { type: String, required: true, max: 20 },
-        lastName: { type: String, required: true, max: 25 },
+        lastname: { type: String, required: true, max: 25 },
         email: { type: String, required: true, max: 30 },
       },
       text: { type: String, required: true, max: 250 },

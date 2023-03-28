@@ -26,4 +26,16 @@ const user = joi.object({
   cart: joi.object().required(),
   timestamp: joi.string().required(),
 });
-export const JOI_VALIDATOR = { product, cart, user };
+const message = joi.object({
+  message: {
+    author: {
+      id: joi.string().required(),
+      name: joi.string().required(),
+      lastname: joi.string().required(),
+      email: joi.string().required(),
+    },
+    text: joi.string().max(60).required(),
+    timestamp: joi.string().required(),
+  },
+});
+export const JOI_VALIDATOR = { product, cart, user, message };

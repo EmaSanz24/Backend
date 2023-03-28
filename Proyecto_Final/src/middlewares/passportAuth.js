@@ -6,7 +6,6 @@ import logger from "../logs/logger.js";
 
 const init = () => {
   passport.serializeUser((user, done) => {
-    logger.debug(user);
     done(null, user.id);
   });
   passport.deserializeUser(async (id, done) => {
@@ -28,7 +27,7 @@ const init = () => {
         return done(null, false);
       }
       const userResponse = {
-        id: user._id,
+        id: user.id,
         email: user.email,
         cart: user.cart,
       };

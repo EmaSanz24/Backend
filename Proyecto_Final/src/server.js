@@ -13,12 +13,12 @@ import { UsersRouter } from "./features/user/user.router.js";
 
 export const app = express();
 
+app.use(Sessions.mongo);
+app.use(cookieParser("secret"));
 passportAuth.init();
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(Sessions.mongo);
-app.use(cookieParser("secret"));
 app.use("/api/products", ProductRouter);
 app.use("/api/cart", CartRouter);
 app.use("/api/chat", MessageRouter);

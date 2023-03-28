@@ -10,6 +10,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:email", async (req, res) => {
   const { email } = req.params;
+  await new MessageController(res).filterByEmail(email);
 });
 
 router.post("/", async (req, res) => {

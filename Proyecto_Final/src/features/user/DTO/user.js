@@ -1,6 +1,6 @@
 export class UserDTO {
-  constructor({ name, lastname, email, phone, hash, address, cart, id }) {
-    this.id = id;
+  constructor({ name, lastname, email, phone, hash, address, cart, _id }) {
+    this.id = _id.toHexString();
     this.name = name;
     this.lastname = lastname;
     this.email = email;
