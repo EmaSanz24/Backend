@@ -21,12 +21,12 @@ export const Login = () => {
     event.preventDefault();
 
     axios.post("http://localhost:8000/login", data).then((res) => {
+      console.log(res.status, res.data);
       if (!res.data) {
         navigate("/signup");
       } else {
         navigate("/api/products");
       }
-      console.log(res.status, res.data);
     });
   };
   return (

@@ -14,7 +14,6 @@ export const ProductDetail = ({ data }) => {
         <div>
           <span>${price}</span>
         </div>
-
         <div>
           {confirm === true ? (
             <button>
