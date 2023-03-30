@@ -1,25 +1,31 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Count } from "./Count.js";
 export const ProductDetail = ({ data }) => {
-  const { title, thumbnail, price, description, quantity } = data;
+  const { title, thumbnail, price, description } = data;
+  const [confirm, setConfirm] = useState(false);
+
   return (
     <div className="ProductDetail">
-      <img src={`${thumbnail}`} />
+      <img src={`${thumbnail}`} alt="imagen producto" />
       <div className="ProductInfo">
         <h2>{title}</h2>
         <p>{description}</p>
         <div>
           <span>${price}</span>
         </div>
-        {/* <div>
-          {qttSelected > 0 ? (
+
+        <div>
+          {confirm === true ? (
             <button>
-              <Link className="toCart" to="/api/cart">
+              <Link className="toCart" to="/api/cart/">
                 ir al carrito
               </Link>
             </button>
           ) : (
-            <Count setQttSelected={quantity} data={data} initial={quantity} />
+            <Count data={data} confirm={setConfirm} />
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );

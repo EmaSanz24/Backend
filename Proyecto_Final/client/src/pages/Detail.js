@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ProductDetail } from "../components/Products/ProductDetail.js";
 import axios from "axios";
-export const Detail = () => {
+export const Detail = ({ cookie }) => {
   const { id } = useParams();
   const [detail, setDetail] = useState({});
   useEffect(() => {

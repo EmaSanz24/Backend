@@ -1,8 +1,6 @@
-import * as normalizr from "normalizr";
 import logger from "../../logs/logger.js";
 import { DATE_UTILS } from "../../utils/date.utils.js";
 import { MessageRepository } from "./messages.repository.js";
-import { app } from "../../server.js";
 import { Server as httpServer } from "http";
 import { Server as socketIOServer } from "socket.io";
 import { JOI_VALIDATOR } from "../../utils/joi.utils.js";
@@ -19,11 +17,7 @@ export class MessageController {
       this.res.send({ succes: false, message: "no messages" });
       return;
     }
-    const normalize = normalizr.normalize;
-    const authorSchema = new normalizr.schema.Entity("authors");
-    const messageSchema = new normalizr.schema.Entity("message", { author: authorSchema });
-    const normalized = normalize(actual, messageSchema);
-    this.res.send(normalized);
+    this.res.send(actual);
   }
   async newMessage(data) {
     const { email, name, lastname, text, id } = data;
@@ -39,13 +33,9 @@ export class MessageController {
         timestamp: DATE_UTILS.getTimestamp(),
       },
     });
-    const normalize = normalizr.normalize;
-    const authorSchema = new normalizr.schema.Entity("authors");
-    const messageSchema = new normalizr.schema.Entity("message", { author: authorSchema });
     await new MessageRepository().save(msg);
     const actual = await new MessageRepository().getAll();
-    const normalized = normalize(actual, messageSchema);
-    this.res.send(normalized);
+    this.res.send(actual);
   }
   async filterByEmail(email) {
     const actual = await new MessageRepository().getAll();
@@ -60,13 +50,9 @@ export class MessageController {
         filter.push(el);
       }
     });
-    const normalize = normalizr.normalize;
-    const authorSchema = new normalizr.schema.Entity("authors");
-    const messageSchema = new normalizr.schema.Entity("message", { author: authorSchema });
-    const normalized = normalize(filter, messageSchema);
-    this.res.send(normalized);
+    this.res.send(filter);
   }
-  async socketStart() {
+  async socketStart(app) {
     const HttpServer = new httpServer(app);
     const io = new socketIOServer(HttpServer);
     io.on("connection", (socket) => {
@@ -75,5 +61,6 @@ export class MessageController {
         this.newMessage(newMessage);
       });
     });
+    logger.debug("Socket Started succesfully...");
   }
 }

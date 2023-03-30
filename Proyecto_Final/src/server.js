@@ -10,12 +10,14 @@ import { MessageRouter } from "./features/messages/messages.router.js";
 import { Sessions } from "./services/mongoSessions.js";
 import { MailRouter } from "./features/orders/order.router.js";
 import { UsersRouter } from "./features/user/user.router.js";
+import { MessageController } from "./features/messages/messages.controller.js";
 
 export const app = express();
 
 app.use(Sessions.mongo);
 app.use(cookieParser("secret"));
 passportAuth.init();
+await new MessageController().socketStart(app);
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

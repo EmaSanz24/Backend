@@ -4,7 +4,6 @@ import { MessageController } from "./messages.controller.js";
 const router = Router();
 
 router.get("/", async (req, res) => {
-  await new MessageController(res).socketStart();
   await new MessageController(res).getMessages();
 });
 
